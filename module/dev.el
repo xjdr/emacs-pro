@@ -1,21 +1,4 @@
-;; Compiler
-;; colorize the output of the compilation mode.
-(require 'ansi-color)
-(defun colorize-compilation-buffer ()
-  (toggle-read-only)
-  (ansi-color-apply-on-region (point-min) (point-max))
-
-  ;; mocha seems to output some non-standard control characters that
-  ;; aren't recognized by ansi-color-apply-on-region, so we'll
-  ;; manually convert these into the newlines they should be.
-  (goto-char (point-min))
-  (while (re-search-forward "�\\[2K�\\[0G" nil t)
-    (progn
-      (replace-match "
-")))
-  (toggle-read-only))
-(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
-
+;;; dev.el -- Basic development packages
 
 ;; Packages
 (use-package ag
@@ -31,7 +14,6 @@
   :ensure t
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode))
-
 
 (use-package magit
   :ensure t
@@ -49,9 +31,21 @@
         projectile-cache-file (pro "var/projectile.cache")
         projectile-known-projects-file (pro "var/projectile-bookmarks.eld")))
 
-
 (use-package yaml-mode
   :ensure t)
+
+;; Compiler
+;; colorize the output of the compilation mode.
+(require 'ansi-color)
+(defun colorize-compilation-buffer ()
+  (toggle-read-only)
+  (ansi-color-apply-on-region (point-min) (point-max))
+  (while (re-search-forward "�\\[2K�\\[0G" nil t)
+    (progn
+      (replace-match "
+")))
+  (toggle-read-only))
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
 
 
 (provide 'dev)

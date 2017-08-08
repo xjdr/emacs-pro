@@ -1,18 +1,16 @@
-;;  init.el
-;;  xjdr - here be dragons and whatnot
+;;; init.el --- Emacs Pro's entry point
 
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
+;;; Commentary:
 
+
+;;; Code:
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
 ;; home sweet home
 (defun pro (filename)
+  "Expand FILENAME relative to the user's Emacs dir."
   (expand-file-name filename user-emacs-directory))
 
 ;; Load modules
@@ -34,6 +32,7 @@
 (load (pro "module/c") 'missing-ok)
 (load (pro "module/go") 'missing-ok)
 (load (pro "module/c++") 'missing-ok)
+(load (pro "module/web") 'missing-ok)
 (load (pro "module/java") 'missing-ok)
 (load (pro "module/python") 'missing-ok)
 (load (pro "module/clojure") 'missing-ok)
@@ -42,3 +41,4 @@
 ;(load (pro "theme/zenburn"))
 ;(load (pro "theme/hipster"))
 (load (pro "theme/solarized"))
+;;; init.el ends here
