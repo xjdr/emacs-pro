@@ -28,7 +28,7 @@
 ;; Primary Devloper Mode
 (load (pro "module/dev") 'missing-ok)
 
-;; Modules
+;; Language Modules
 (load (pro "module/c") 'missing-ok)
 (load (pro "module/go") 'missing-ok)
 (load (pro "module/c++") 'missing-ok)
@@ -36,9 +36,13 @@
 (load (pro "module/java") 'missing-ok)
 (load (pro "module/python") 'missing-ok)
 (load (pro "module/clojure") 'missing-ok)
+(load (pro "module/protobuf") 'missing-ok)
+
+;; Emacs Modules
+(load (pro "module/org") 'missing-ok)
 
 ;; Themes
-;(load (pro "theme/zenburn"))
+(load (pro "theme/zenburn"))
 ;(load (pro "theme/hipster"))
-(load (pro "theme/solarized"))
+;(load (pro "theme/solarized"))
 ;;; init.el ends here

@@ -15,6 +15,9 @@
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode))
 
+(use-package json-mode
+  :ensure t)
+
 (use-package magit
   :ensure t
   :config
