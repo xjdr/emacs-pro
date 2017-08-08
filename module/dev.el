@@ -1,5 +1,11 @@
 ;;; dev.el -- Basic development packages
 
+(defun spell-check-and-wrap-at-80 ()
+  "Enable three minor modes for neat text."
+  (flyspell-mode)
+  (auto-fill-mode)
+  (set-fill-column 80))
+
 ;; Packages
 (use-package ag
   :ensure t
@@ -20,11 +26,16 @@
 
 (use-package magit
   :ensure t
-  :config
-  (global-set-key (kbd "C-c g") 'magit-status))
+  :bind ("C-c g" . magit-status)
+  :init
+  (add-hook 'git-commit-mode-hook 'spell-check-and-wrap-at-80)
+)
 
 (use-package markdown-mode
-  :ensure t)
+  :ensure t
+  :init
+  (add-hook 'markdown-mode-hook 'spell-check-and-wrap-at-80)
+  )
 
 (use-package projectile
   :ensure t
@@ -33,6 +44,13 @@
   (setq projectile-enable-caching t
         projectile-cache-file (pro "var/projectile.cache")
         projectile-known-projects-file (pro "var/projectile-bookmarks.eld")))
+
+(use-package rainbow-delimiters
+  :ensure t
+  :defer t
+  :init
+  (progn
+    (add-hook 'emacs-lisp-mode-hook #'rainbow-delimiters-mode)))
 
 (use-package yaml-mode
   :ensure t)
@@ -49,6 +67,11 @@
 ")))
   (toggle-read-only))
 (add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+
+;;;; Tramp is good
+(require 'tramp)
+(setq tramp-default-method "ssh")
+(setq tramp-persistency-file-name (pro "var/tramp-history.el"))
 
 
 (provide 'dev)
