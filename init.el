@@ -21,4 +21,24 @@
 (load (pro "core/ido"))
 (load (pro "core/eshell"))
 (load (pro "core/keybindings"))
-;(load (pro "core/package"))
+
+(load (pro "core/osx"))
+(load (pro "core/linux"))
+
+(load (pro "core/package"))
+
+;; Primary Devloper Mode
+(load (pro "module/dev") 'missing-ok)
+
+;; Modules
+(load (pro "module/c") 'missing-ok)
+(load (pro "module/go") 'missing-ok)
+(load (pro "module/c++") 'missing-ok)
+(load (pro "module/java") 'missing-ok)
+(load (pro "module/python") 'missing-ok)
+(load (pro "module/clojure") 'missing-ok)
+
+;; Themes
+;(load (pro "theme/zenburn"))
+;(load (pro "theme/hipster"))
+(load (pro "theme/solarized"))

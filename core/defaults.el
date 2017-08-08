@@ -44,3 +44,5 @@
 
 ;; Misc
 (show-paren-mode)
+
+(provide 'defaults)
