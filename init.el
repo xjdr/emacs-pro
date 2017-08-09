@@ -6,12 +6,6 @@
 
 ;;; Code:
 
-;; Added by Package.el.  This must come before configurations of
-;; installed packages.  Don't delete this line.  If you don't want it,
-;; just comment it out by adding a semicolon to the start of the line.
-;; You may delete these explanatory comments.
-(package-initialize)
-
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file 'noerror)
 
@@ -45,7 +39,7 @@
 (load (pro "module/web") 'missing-ok)
 (load (pro "module/java") 'missing-ok)
 (load (pro "module/python") 'missing-ok)
-;; (load (pro "module/clojure") 'missing-ok)
+;; (load (pro "module/clojure") 'missing-ok) ;; This is very heavy, and should be left off unless needed
 (load (pro "module/protobuf") 'missing-ok)
 
 ;; Emacs Modules
@@ -54,7 +48,10 @@
 
 ;; Themes
 (message "Loading Theme")
-(load (pro "theme/zenburn"))
+;(load (pro "theme/zenburn"))
+;(load (pro "theme/molokai"))
 ;(load (pro "theme/hipster"))
-;(load (pro "theme/solarized"))
+;(load (pro "theme/solarized-light"))
+(load (pro "theme/solarized-dark"))
+
 ;;; init.el ends here

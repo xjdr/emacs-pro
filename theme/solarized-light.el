@@ -1,7 +1,7 @@
 (use-package solarized-theme
   :ensure t
   :init
-  (load-theme 'solarized-dark t))
+  (load-theme 'solarized-light t))
 
 (setq eshell-prompt-function
       (lambda ()
@@ -20,8 +20,8 @@
               (mapconcat (lambda (elm) elm)
                          p-lst
                          "/")))
-          (split-string (pwd-repl-home (eshell/pwd)) "/")) 'face `(:foreground "yellow"))
+          (split-string (pwd-repl-home (eshell/pwd)) "/")) 'face `(:foreground "blue"))
          (or (curr-dir-git-branch-string (eshell/pwd)))
          (propertize "# " 'face 'default))))
 
-(provide 'solarized)
+(provide 'solarized-light)

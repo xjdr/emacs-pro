@@ -34,3 +34,9 @@ Keybinding         | Description
 (kbd "M-/")        | 'hippie-expand)
 (kbd "C-c C-c")    | 'compile)
 (kbd "C-c C-t")    | (lambda () (interactive) (compile "make -k test")))
+
+## Module Keybindings
+
+Keybinding         | Description
+-------------------|------------------------------------------------------------
+(kbd "C-c g")      | 'magit-status)

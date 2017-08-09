@@ -21,6 +21,12 @@
   :config
   (add-hook 'after-init-hook #'global-flycheck-mode))
 
+(use-package guru-mode
+  :ensure t
+  :config
+  (add-hook 'prog-mode-hook 'guru-mode)
+  )
+
 (use-package json-mode
   :ensure t)
 
