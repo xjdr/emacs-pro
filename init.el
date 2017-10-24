@@ -37,6 +37,7 @@
 ;; Primary Devloper Mode
 (message "Loading Developer Module")
 (load (pro "module/dev") 'missing-ok)
+(load (pro "module/devOps") 'missing-ok)
 
 ;; Language Modules
 (message "Loading Language Modules")
