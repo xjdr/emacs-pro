@@ -1,9 +1,14 @@
 (use-package google-c-style
-  :ensure t)
+        :ensure t)
+
+;; Load site-list
+(message "Loading CMake Mode")
+(load (pro "site-lisp/cmake-mode"))
+(require 'cmake-mode)
 
 (defun my-c++-mode-hook ()
-  (google-set-c-style)
-  (google-make-newline-indent))
+        (google-set-c-style)
+        (google-make-newline-indent))
 
 (add-hook 'c++-mode-hook
           (lambda ()

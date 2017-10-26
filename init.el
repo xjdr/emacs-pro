@@ -28,15 +28,14 @@
 (load (pro "core/ido"))
 (load (pro "core/eshell"))
 (load (pro "core/keybindings"))
-
 (load (pro "core/osx"))
 (load (pro "core/linux"))
-
 (load (pro "core/package"))
 
 ;; Primary Devloper Mode
 (message "Loading Developer Module")
 (load (pro "module/dev") 'missing-ok)
+(load (pro "module/devOps") 'missing-ok)
 
 ;; Language Modules
 (message "Loading Language Modules")
@@ -55,10 +54,10 @@
 
 ;; Themes
 (message "Loading Theme")
+(load (pro "theme/hipster"))
 ;(load (pro "theme/zenburn"))
 ;(load (pro "theme/molokai"))
-;(load (pro "theme/hipster"))
 ;(load (pro "theme/solarized-light"))
-(load (pro "theme/solarized-dark"))
+;(load (pro "theme/solarized-dark"))
 
 ;;; init.el ends here
