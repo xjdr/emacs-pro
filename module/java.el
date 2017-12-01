@@ -1,6 +1,11 @@
 (use-package google-c-style
   :ensure t)
 
+(use-package groovy-mode
+  :ensure t
+  :config
+  (add-to-list 'auto-mode-alist '("\.groovy$" . groovy-mode)))
+
 (flycheck-define-checker infer
   "A Java syntax and style checker using infer.
 See URL http://fbinfer.com/"
@@ -39,8 +44,8 @@ See URL http://fbinfer.com/"
             (setq-local compilation-environment (list
                                                  (concat "FILE_NAME=" (buffer-file-name))
                                                  (concat "NOINFER=" (if java-use-infer "" "1"))))
-            (editorconfig-mode)
-            (flycheck-mode)
-            (setq flycheck-checker 'mvn)))
+            (editorconfig-mode)))
+;            (flycheck-mode)
+;            (setq flycheck-checker 'mvn)))
 
 (provide 'java)

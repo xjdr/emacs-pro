@@ -2,6 +2,12 @@
   :ensure t
   )
 
+;; Fonts and whatnot
+(set-face-attribute 'default nil
+                    :family "Source Code Pro"
+                    :height 140
+                    :weight 'normal
+                    :width 'normal)
 
 (setq eshell-prompt-function
       (lambda ()
