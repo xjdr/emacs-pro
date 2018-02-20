@@ -43,6 +43,7 @@
 (load (pro "module/go") 'missing-ok)
 (load (pro "module/c++") 'missing-ok)
 (load (pro "module/web") 'missing-ok)
+(load (pro "module/rust") 'missing-ok)
 (load (pro "module/java") 'missing-ok)
 (load (pro "module/python") 'missing-ok)
 ;; (load (pro "module/clojure") 'missing-ok) ;; This is very heavy, and should be left off unless needed
